@@ -1,2 +1,5 @@
 "use strict";
-let fullname = "lalitsiraswa";
+let fname = "lalit";
+let lname = "siraswa";
+let fullname = fname.toUpperCase().concat(lname.toUpperCase());
+console.log(fullname);
