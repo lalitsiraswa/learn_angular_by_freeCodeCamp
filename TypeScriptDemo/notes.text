@@ -1,3 +1,4 @@
 # npm init -> to create package.json file
 # npm install -g typescript || npm i typescript -> install typescript
 # tsc --init -> create typescript configuration file
+# tsc -> compile typescript file and generate a .js file with the same name
