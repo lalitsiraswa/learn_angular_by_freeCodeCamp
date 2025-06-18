@@ -10,3 +10,5 @@ age = 25;
 let dob: string = "25";
 let date_of_birth: number = parseInt(dob);
 
+let isValid: boolean = true;
+console.log("isValid: ", isValid);
