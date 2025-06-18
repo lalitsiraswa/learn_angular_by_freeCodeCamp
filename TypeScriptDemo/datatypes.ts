@@ -23,3 +23,13 @@ console.log(
   "Sum Of numList : ",
   numList.reduce((acc, num) => acc + num, 5)
 ); // 5 represents the initial value, default is 0;
+
+const enum Colors {
+  Red,
+  Green,
+  Blue,
+  Black,
+  Grey,
+}
+
+let red: Colors = Colors.Red;
