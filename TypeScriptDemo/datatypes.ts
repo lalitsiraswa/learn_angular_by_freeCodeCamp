@@ -33,3 +33,10 @@ const enum Colors {
 }
 
 let red: Colors = Colors.Red;
+
+let swapNumbs: [firstNumber: number, secondNumber: number];
+function swapNumbers(num1: number, num2: number): [number, number] {
+  return [num2, num1];
+}
+swapNumbs = swapNumbers(10, 20);
+console.log(swapNumbs);
