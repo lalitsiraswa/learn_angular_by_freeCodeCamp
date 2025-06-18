@@ -23,3 +23,6 @@ function swapNumbers(num1, num2) {
 }
 swapNumbs = swapNumbers(10, 20);
 console.log(swapNumbs);
+let random;
+random = "string";
+random = 10;

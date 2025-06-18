@@ -40,3 +40,8 @@ function swapNumbers(num1: number, num2: number): [number, number] {
 }
 swapNumbs = swapNumbers(10, 20);
 console.log(swapNumbs);
+
+let random: any;
+random = "string";
+random = 10;
+
