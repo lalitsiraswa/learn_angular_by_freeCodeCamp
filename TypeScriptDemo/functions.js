@@ -20,3 +20,11 @@ function add2(num1, num2, ...num3) {
 let numbers = [3, 4, 5, 6];
 console.log(add2(1, 2, ...numbers));
 console.log(add2(2, 4, ...[1, 2, 3, 4]));
+console.log(add2(1, 2, 3, 4, 5, 6, 7, 8, 9));
+function getItems(items) {
+    return new Array().concat(items);
+}
+let concatNumbers = getItems([1, 2, 3, 4, 5]);
+console.log(concatNumbers);
+let concatString = getItems(["abc", "def", "ghi", "jkl", "mno"]);
+console.log(concatString);

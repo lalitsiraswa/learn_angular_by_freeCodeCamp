@@ -24,3 +24,12 @@ function add2(num1: number, num2: number, ...num3: number[]): number {
 let numbers: Array<number> = [3, 4, 5, 6];
 console.log(add2(1, 2, ...numbers));
 console.log(add2(2, 4, ...[1, 2, 3, 4]));
+console.log(add2(1, 2, 3, 4, 5, 6, 7, 8, 9));
+
+function getItems<Type>(items: Type[]): Type[] {
+  return new Array<Type>().concat(items);
+}
+let concatNumbers = getItems<number>([1, 2, 3, 4, 5]);
+console.log(concatNumbers);
+let concatString = getItems<string>(["abc", "def", "ghi", "jkl", "mno"]);
+console.log(concatString);
