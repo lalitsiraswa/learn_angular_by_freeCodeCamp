@@ -23,6 +23,9 @@ class Employee {
     getNameWithAddress() {
         return `${this.name} stays at ${this.address}.`;
     }
+    static getEmployeeCount() {
+        return 50;
+    }
 }
 _Employee_id = new WeakMap();
 class Manager extends Employee {
@@ -46,3 +49,4 @@ console.log(john.getNameWithAddress());
 let mike = new Manager(2, "Mike", "Church Street");
 console.log(mike);
 console.log(mike.getNameWithAddress());
+console.log(Employee.getEmployeeCount());
