@@ -1,4 +1,4 @@
-interface User {
+export interface User {
   id: number;
   name: string;
   age?: number; // '?' makes this has an optional property.
@@ -19,3 +19,7 @@ let employee: Employees = {
   salary: 100000,
 };
 console.log(employee);
+
+export interface Login {
+  login(): User;
+}

@@ -1,3 +1,5 @@
+import { Login, User } from "./interface";
+
 // either undefined or ! for the erro: Property 'name' has no initializer and is not definitely assigned in the constructor.
 // In typescript you can only have either default constructor or parameterized constructor, but not both.
 // In typescript Multiple constructor implementations are not allowed.
@@ -10,7 +12,7 @@ interface Address {
   state: string;
   pin: string;
 }
-class Employee {
+class Employee implements Login {
   #id: number; // private member variable.
   protected name: string;
   address: Address;
@@ -19,6 +21,9 @@ class Employee {
     this.#id = id;
     this.name = name;
     this.address = address;
+  }
+  login(): User {
+    return { id: 101, name: "john", email: "john@gmail.com" };
   }
   getNameWithAddress(): string {
     return `${this.name} stays at ${this.address.city}.`;
