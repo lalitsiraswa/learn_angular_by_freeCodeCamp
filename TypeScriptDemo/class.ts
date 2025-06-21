@@ -12,6 +12,9 @@ class Employee {
     this.name = name;
     this.address = address;
   }
+  getNameWithAddress(): string {
+    return `Name : ${this.name}\nAddress : ${this.address}`;
+  }
 }
 
 // We can't have both the constructors.
@@ -24,3 +27,4 @@ class Employee {
 
 let john = new Employee(1, "John", "Highway 71");
 console.log(john);
+console.log(john.getNameWithAddress());
