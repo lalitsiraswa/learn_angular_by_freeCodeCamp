@@ -23,3 +23,11 @@ console.log(employee);
 export interface Login {
   login(): User;
 }
+
+// Object Destructuring
+let { name, email } = user;
+let { name: userName, email: userEmail } = user;
+console.log(name);
+console.log(email);
+console.log(userName);
+console.log(userEmail);
