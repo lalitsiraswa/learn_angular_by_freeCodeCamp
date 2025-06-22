@@ -31,3 +31,14 @@ console.log(name);
 console.log(email);
 console.log(userName);
 console.log(userEmail);
+
+let users: User[] = [
+  { id: 101, name: "ABC", email: "abc@gmail.com" },
+  { id: 102, name: "DEF", email: "def@gmail.com" },
+  { id: 103, name: "GHI", email: "ghi@gmail.com" },
+];
+
+// Arrays Destructuring
+let [, user2, user3] = users;
+console.log(user2);
+console.log(user3);
