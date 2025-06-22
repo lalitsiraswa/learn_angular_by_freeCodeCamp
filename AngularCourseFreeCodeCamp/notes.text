@@ -1,0 +1,38 @@
+# To use multiple Angular projects with different Angular versions, you can leverage NPX effectively. 
+# This allows you to run a specific version of the Angular CLI (@angular/cli) without globally installing or switching versions. 
+# Here’s how you can manage different Angular versions in different projects:
+>> npx -p @angular/cli@13.0.1 ng new my-app
+>> npx -p @angular/cli@13.0.1 ng new hotelinventoryapp
+>> npx -p @angular/cli@13.0.1 ng new my-angular13-app
+>> cd my-angular13-app
+>> npx -p @angular/cli@13.0.1 ng new my-app
+>> The -p or --package flag tells npx:
+    >> "Use this package temporarily (without installing globally) and run a command from it."
+>> npx -p @angular/cli@13.0.1 -> Downloads the CLI, but does nothing without a command.
+>> npx -p @angular/cli@13.0.1 ng new my-app -> Creates a new Angular 13 app.
+>> npx -p @angular/cli@13.0.1 ng <command> -> Runs any Angular CLI command using v13.0.1.
+
+
+# NVM stands for Node Version Manager, and it's a powerful tool used to install, manage, and switch between different versions of Node.js on your system.
+>> nvm --version
+>> nvm install 18.20.2
+>> nvm install 20.14.0
+>> nvm use 18.20.2
+>> nvm list
+
+# Create a angular workspace without an Application
+>> ng new hotelinventoryapp --createApplication=false
+>> npm i -> to install the packages, it will read the packages from package.json and install.
+>> ng g app application_name -> to add application within workspace.
+
+# Create a angular workspace with an Application
+>> ng new hotelinventoryapp
+
+>> ng generate component component-name
+>> ng g c component-name
+>> ng g c home
+
+>> ng generate service service-name
+>> ng g s service-name
+>> ng g s user
+ 
