@@ -12,13 +12,14 @@
 >> npx -p @angular/cli@13.0.1 ng new my-app -> Creates a new Angular 13 app.
 >> npx -p @angular/cli@13.0.1 ng <command> -> Runs any Angular CLI command using v13.0.1.
 
-//-----------------------------------------------
+//----------------------- IMP. ------------------------
 >> It does not install Angular CLI globally.
 >> npx -p @angular/cli@13.0.1 ng new hotelinventoryapp
 >> cd hotelinventoryapp
 >> npx ng version
+>> npx ng --version
 >> npx ng serve
-//-----------------------------------------------
+//-----------------------------------------------------
 
 # NVM stands for Node Version Manager, and it's a powerful tool used to install, manage, and switch between different versions of Node.js on your system.
 >> nvm --version
