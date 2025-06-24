@@ -4,4 +4,10 @@
 <!-- Property Binding Syntax -->
 <!-- We can use property binding with any valid HTML property of any valid HTML tag -->
 <!-- In JavaScript : document.getElementById('numberOfRooms').innerText = numberOfRooms; -->
-Number Of Rooms : <div [innerText]="numberOfRooms"></div>
+<!-- [hidden]="hideRooms" : Property binding -->
+<div [hidden]="hideRooms">
+    Number Of Rooms : <div [innerText]="numberOfRooms"></div>
+</div>
+
+<!-- Event Binding Syntax -->
+<button (click)="toggle()">Toggle</button>
