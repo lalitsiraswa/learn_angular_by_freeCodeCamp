@@ -43,4 +43,8 @@
 >> ng generate service service-name
 >> ng g s service-name
 >> ng g s user
+
+# --- Creating component ---
+>> ng g c component_name
+
  
