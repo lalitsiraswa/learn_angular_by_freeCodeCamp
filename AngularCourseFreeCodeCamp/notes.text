@@ -47,4 +47,19 @@
 # --- Creating component ---
 >> ng g c component_name
 
+#--- Directive ---
+>> Directives: Directives are use to change the behaviour and appearance of DOM element.
+>> Directives can implement all lifecycle hooks.
+>> Directives can not have templates.
+
+# Types of Directives
+1. Structural Directive
+2. Attribute Directive
+=== Built-in Directives ===
+>> *ngIf
+>> *ngFor
+>> *ngSwitch
+>> ngClass
+>> ngStyle
+
  
