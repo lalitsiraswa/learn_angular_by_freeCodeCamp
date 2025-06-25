@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Room } from './rooms';
+import { Room, RoomList } from './rooms';
 
 @Component({
   selector: 'hinv-rooms',
@@ -15,6 +15,45 @@ export class RoomsComponent implements OnInit {
     availableRooms: 10,
     bookedRooms: 5
   }
+  roomList: RoomList[] = [
+    {
+      roomNumber: 203,
+      roomType: 'Deluxe Room',
+      amenities: 'a comfortable bed with quality linens, a private bathroom with toiletries and towels, a TV, Wi-Fi access, air conditioning, and a desk.',
+      price: 999,
+      photos: 'http://www.leg.sample.com/order/start.php',
+      checkinTime: new Date('11-Nov-2021'),
+      checkoutTime: new Date('12-Nov-2021')
+    },
+    {
+      roomNumber: 405,
+      roomType: 'Deluxe Room',
+      amenities: 'a private bathroom with toiletries and towels, a TV, Wi-Fi access, air conditioning, and a desk.',
+      price: 1999,
+      photos: 'https://www.sample.info/?street=fly&decision=celery',
+      checkinTime: new Date('12-Nov-2021'),
+      checkoutTime: new Date('13-Nov-2021')
+    },
+    {
+      roomNumber: 204,
+      roomType: 'Private Suite Room',
+      amenities: 'a private bathroom with toiletries and towels, a TV, Wi-Fi access, air conditioning, and a desk.',
+      price: 4999,
+      photos: 'https://www.sample.info/?street=fly&decision=celery',
+      checkinTime: new Date('13-Nov-2021'),
+      checkoutTime: new Date('14-Nov-2021')
+    },
+    {
+      roomNumber: 904,
+      roomType: 'Single Bed Room',
+      amenities: 'a comfortable bed with quality linens, a private bathroom with toiletries and towels, a TV, Wi-Fi access, air conditioning, and a desk.',
+      price: 500,
+      photos: 'http://www.leg.sample.com/order/start.php',
+      checkinTime: new Date('11-Nov-2021'),
+      checkoutTime: new Date('12-Nov-2021')
+    },
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
