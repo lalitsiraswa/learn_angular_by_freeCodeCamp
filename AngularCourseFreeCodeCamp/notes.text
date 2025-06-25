@@ -53,8 +53,8 @@
 >> Directives can not have templates.
 
 # Types of Directives
-1. Structural Directive
-2. Attribute Directive
+1. Structural Directive: Directives those are starts with *, these can add or remove element from the DOM.
+2. Attribute Directive: these only can modify the element from the DOM, but can't add or remove them.
 === Built-in Directives ===
 >> *ngIf
 >> *ngFor
