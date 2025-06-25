@@ -62,4 +62,6 @@
 >> ngClass
 >> ngStyle
 
- 
+# --- Pipes ---
+>> Pipes are used for data transformation.
+>> Pipes don't change actual object.
