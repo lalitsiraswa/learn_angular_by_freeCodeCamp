@@ -20,13 +20,17 @@
     <!-- {{ roomList | json }} -->
     <table>
         <tr>
+            <th>Index</th>
+            <th>Even/Odd</th>
             <th>Room Number</th>
             <th>Room Type</th>
             <th>Room Price</th>
             <th>Room Amenities</th>
             <th>CheckIn Time</th>
         </tr>
-        <tr *ngFor="let room of roomList">
+        <tr *ngFor="let room of roomList; let e=even; let o=odd; let i=index">
+            <td>{{ i }}</td>
+            <td>{{ e ? "Even" : "Odd" }}</td>
             <td>{{ room.roomNumber }}</td>
             <td>{{ room.roomType }}</td>
             <td>{{ room.price }}</td>
