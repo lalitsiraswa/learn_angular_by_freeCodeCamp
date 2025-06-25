@@ -9,5 +9,9 @@
     Number Of Rooms : <div [innerText]="numberOfRooms"></div>
 </div>
 
+<div *ngIf="rooms.availableRooms > 0">
+    Rooms List:
+</div>
+
 <!-- Event Binding Syntax -->
 <button (click)="toggle()">Toggle</button>
