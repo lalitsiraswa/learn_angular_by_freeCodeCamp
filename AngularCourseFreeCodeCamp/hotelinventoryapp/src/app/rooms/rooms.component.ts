@@ -11,9 +11,9 @@ export class RoomsComponent implements OnInit {
   numberOfRooms = 20;
   hideRooms: boolean = false;
   rooms: Room = {
-    // totalRooms: 15,
-    // availableRooms: 10,
-    // bookedRooms: 5
+    totalRooms: 15,
+    availableRooms: 10,
+    bookedRooms: 5
   }
   constructor() { }
 
