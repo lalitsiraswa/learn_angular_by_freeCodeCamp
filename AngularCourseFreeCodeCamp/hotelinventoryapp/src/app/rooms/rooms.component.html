@@ -6,7 +6,8 @@
 <!-- In JavaScript : document.getElementById('numberOfRooms').innerText = numberOfRooms; -->
 <!-- [hidden]="hideRooms" : Property binding -->
 <div [hidden]="hideRooms">
-    Number Of Rooms : <div [innerText]="numberOfRooms"></div>
+    Number Of Rooms : <div [ngStyle]="{'color': rooms.availableRooms > 0 ? 'green' : 'red'}"
+        [innerText]="numberOfRooms"></div>
 </div>
 
 <!-- Nullish coalescing operator (??) -->
