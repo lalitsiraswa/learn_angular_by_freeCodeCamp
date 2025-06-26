@@ -71,3 +71,13 @@
 >> npx ng add ngx-bootstrap
 >> or
 >> npm i bootstrap
+
+# --- LifeCycle Hooks ---
+>> ngOnChanges
+>> ngOnInit: first constructor then ngOnInit. It should be used in case when we want to show some data from an API call.
+>> ngDoCheck
+>> ngAfterContentInit
+>> ngAfterContentChecked
+>> ngAfterViewInit
+>> ngAfterViewChecked
+>> ngOnDestroy
