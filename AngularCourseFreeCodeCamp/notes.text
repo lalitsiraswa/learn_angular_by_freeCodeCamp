@@ -65,3 +65,9 @@
 # --- Pipes ---
 >> Pipes are used for data transformation.
 >> Pipes don't change actual object.
+
+# --- Ngx-Bootstrap ---
+>> https://valor-software.com/ngx-bootstrap/documentation
+>> npx ng add ngx-bootstrap
+>> or
+>> npm i bootstrap
