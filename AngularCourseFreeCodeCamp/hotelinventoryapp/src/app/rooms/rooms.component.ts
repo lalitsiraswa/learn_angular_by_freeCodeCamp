@@ -10,6 +10,11 @@ export class RoomsComponent implements OnInit {
   hotelName = 'Hilton Hotel';
   numberOfRooms = 20;
   hideRooms: boolean = false;
+  // ! (Definite Assignment Assertion)
+  // This is the "definite assignment assertion operator" in TypeScript. It tells the compiler:
+  // "Trust me, I will assign a value to this property before it’s used, even if it doesn't look like it right now."
+  // Normally, TypeScript would complain if you don’t initialize a non-optional field:
+  selectedRoom!: RoomList;
   rooms: Room = {
     totalRooms: 15,
     availableRooms: 10,
@@ -70,5 +75,10 @@ export class RoomsComponent implements OnInit {
 
   toggle() {
     this.hideRooms = !this.hideRooms;
+  }
+
+  selectRoom(room: RoomList) {
+    console.log(`Selected Room : ${JSON.stringify(room)}`);
+    this.selectedRoom = room;
   }
 }

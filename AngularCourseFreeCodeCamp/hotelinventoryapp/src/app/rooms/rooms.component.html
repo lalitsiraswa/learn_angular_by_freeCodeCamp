@@ -18,10 +18,18 @@
 <!-- The ?? operator only considers null and undefined as "nullish" values, allowing other falsy values (like 0 or "") to be returned if they are the left-hand operand. -->
 {{ rooms?.availableRooms ?? "No Rooms" }}
 
+<div *ngIf="selectedRoom">
+  {{ selectedRoom | json }}
+</div>
+
 <!-- Optional chaining (?.) -->
 <div *ngIf="rooms.availableRooms > 0">
   <!-- Property binding -->
-  <hinv-rooms-list [rooms]="roomList"></hinv-rooms-list>
+  <!-- Event binding -->
+  <hinv-rooms-list
+    [rooms]="roomList"
+    (selectedRoom)="selectRoom($event)"
+  ></hinv-rooms-list>
 </div>
 
 <!-- Event Binding Syntax -->

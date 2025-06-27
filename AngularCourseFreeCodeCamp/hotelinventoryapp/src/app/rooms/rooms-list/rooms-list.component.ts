@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { RoomList } from '../rooms';
 
 @Component({
@@ -10,8 +10,13 @@ export class RoomsListComponent implements OnInit {
   // What the below line do @Input(): It will Make 'rooms' as a valid HTML property on 'hinv-rooms-list' HTML element,
   // so we can use property binding and send data from parent to child.
   @Input() rooms: RoomList[] = [];
+  @Output() selectedRoom = new EventEmitter<RoomList>();
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  selectRoom(room: RoomList) {
+    this.selectedRoom.emit(room);
+  }
 }
