@@ -81,3 +81,8 @@
 >> ngAfterViewInit
 >> ngAfterViewChecked
 >> ngOnDestroy
+
+# --- Component Communication/Interaction ---
+1. Using @Input & @Output
+2. Using @ViewChild & @ContentChild
+3. Using Services
