@@ -1,4 +1,5 @@
 import {
+  AfterViewChecked,
   AfterViewInit,
   Component,
   DoCheck,
@@ -13,12 +14,15 @@ import { HeaderComponent } from '../header/header.component';
   templateUrl: './rooms.component.html',
   styleUrls: ['./rooms.component.scss'],
 })
-export class RoomsComponent implements OnInit, DoCheck, AfterViewInit {
+export class RoomsComponent
+  implements OnInit, DoCheck, AfterViewInit, AfterViewChecked
+{
   // It’s typically used when you want to access methods, properties, or DOM elements of a child component from the parent component's TypeScript class.
   // When is it assigned?
   // Angular will automatically populate headerComponent after ngAfterViewInit() lifecycle hook.
   // If you try to use a @ViewChild reference before the view is initialized (e.g., in the constructor or ngOnInit()), the reference will be undefined.
-  @ViewChild(HeaderComponent, { static: true }) headerComponent!: HeaderComponent;
+  // @ViewChild(HeaderComponent, { static: true }) headerComponent!: HeaderComponent;
+  @ViewChild(HeaderComponent) headerComponent!: HeaderComponent;
   // The { static: true } or { static: false } option tells Angular when to resolve the @ViewChild reference during the component’s lifecycle.
   // Setting static: true means:
   // Resolve the view query before Angular runs ngOnInit() — during the component's initialization phase.
@@ -47,16 +51,20 @@ export class RoomsComponent implements OnInit, DoCheck, AfterViewInit {
   roomList: RoomList[] = [];
 
   constructor() {}
-  ngAfterViewInit(): void {
+  ngAfterViewChecked(): void {
     console.log('headerComponent: ', this.headerComponent);
     this.headerComponent.title = 'Welcome To Hilton Hotel';
+  }
+  ngAfterViewInit(): void {
+    console.log('headerComponent: ', this.headerComponent);
+    // this.headerComponent.title = 'Welcome To Hilton Hotel';
   }
   ngDoCheck(): void {
     console.log('On ngDoCheck is Called!');
   }
 
   ngOnInit(): void {
-    console.log('headerComponent: ', this.headerComponent);
+    // console.log('headerComponent: ', this.headerComponent);
     this.roomList = [
       {
         roomNumber: 203,
