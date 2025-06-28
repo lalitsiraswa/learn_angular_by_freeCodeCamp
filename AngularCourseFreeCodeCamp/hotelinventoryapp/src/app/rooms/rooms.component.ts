@@ -18,7 +18,7 @@ export class RoomsComponent implements OnInit, DoCheck, AfterViewInit {
   // When is it assigned?
   // Angular will automatically populate headerComponent after ngAfterViewInit() lifecycle hook.
   // If you try to use a @ViewChild reference before the view is initialized (e.g., in the constructor or ngOnInit()), the reference will be undefined.
-  @ViewChild(HeaderComponent, { static: true })
+  @ViewChild(HeaderComponent, { static: true }) headerComponent!: HeaderComponent;
   // The { static: true } or { static: false } option tells Angular when to resolve the @ViewChild reference during the component’s lifecycle.
   // Setting static: true means:
   // Resolve the view query before Angular runs ngOnInit() — during the component's initialization phase.
@@ -30,7 +30,6 @@ export class RoomsComponent implements OnInit, DoCheck, AfterViewInit {
   // Resolve the view query after Angular has fully initialized the view — after ngAfterViewInit().
   // The @ViewChild reference will not be available in ngOnInit(), only in ngAfterViewInit().
   // Use when the element/component is conditionally rendered, e.g., inside *ngIf, *ngFor, etc.
-  headerComponent!: HeaderComponent;
   title: string = 'Room List';
   hotelName = 'Hilton Hotel';
   numberOfRooms = 20;
