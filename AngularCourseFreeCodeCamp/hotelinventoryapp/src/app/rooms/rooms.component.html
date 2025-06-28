@@ -22,6 +22,11 @@
   {{ selectedRoom | json }}
 </div>
 
+<div>
+  <!-- Event binding -->
+  <button type="button" (click)="addRoom()">Add Room</button>
+</div>
+
 <!-- Optional chaining (?.) -->
 <div *ngIf="rooms.availableRooms > 0">
   <!-- Property binding -->

@@ -81,4 +81,27 @@ export class RoomsComponent implements OnInit {
     console.log(`Selected Room : ${JSON.stringify(room)}`);
     this.selectedRoom = room;
   }
+
+  addRoom() {
+    const newRoom: RoomList = {
+      roomNumber: 901,
+      roomType: 'Luxury Deluxe Room',
+      amenities:
+        'a comfortable bed with quality linens, a private bathroom with toiletries and towels, a TV, Wi-Fi access, air conditioning, and a desk.',
+      price: 999,
+      photos: 'http://www.leg.sample.com/order/start.php',
+      checkinTime: new Date('13-Nov-2021'),
+      checkoutTime: new Date('15-Nov-2021'),
+      rating: 3.567,
+    };
+    // Whenever we are working with ChangeDetectionStrategy.OnPush, the data you are trying to assign should
+    // not be mutable. So what we can do, rather than directly modifying the roomList, we have to
+    // return a new object every time we modify it.
+
+    // this.roomList.push(newRoom); // It will not work in case of ChangeDetectionStrategy.OnPush, means the changes will
+    // not reflect to the child component.
+
+    // spread operator (...)
+    this.roomList = [...this.roomList, newRoom];
+  }
 }

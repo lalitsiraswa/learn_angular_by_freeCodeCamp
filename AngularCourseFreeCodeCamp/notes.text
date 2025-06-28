@@ -86,3 +86,18 @@
 1. Using @Input & @Output
 2. Using @ViewChild & @ContentChild
 3. Using Services
+
+# --- ChangeDetectionStrategy ---
+>> OnPush: ChangeDetectionStrategy.OnPush: 
+    > Why to use : Because, We are not modifying the data in this component, data is comming from outside, 
+    > So we want this component to not reload.
+    // Whenever we are working with ChangeDetectionStrategy.OnPush, the data you are trying to assign should
+    // not be mutable. So what we can do, rather than directly modifying the roomList, we have to
+    // return a new object every time we modify it.
+    // In case if you are modifying an object, you have to return an new object.
+
+    # Requirement to use ChangeDetectionStrategy.OnPush:
+    1. The component should not change the data internally.
+    2. In case you are assigning or passing some data, it should be come from parent component, and the it should be immutable.
+
+>> Default: ChangeDetectionStrategy.Default;
