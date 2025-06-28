@@ -73,13 +73,21 @@
 >> npm i bootstrap
 
 # --- LifeCycle Hooks ---
->> ngOnChanges
+>> ngOnChanges: ngOnChanges lifecycle hook can be apply to any component which has @Input property, you cannot apply 
+    ngOnChanges anywhere else. 
+
 >> ngOnInit: first constructor then ngOnInit. It should be used in case when we want to show some data from an API call.
+
 >> ngDoCheck
+
 >> ngAfterContentInit
+
 >> ngAfterContentChecked
+
 >> ngAfterViewInit
+
 >> ngAfterViewChecked
+
 >> ngOnDestroy
 
 # --- Component Communication/Interaction ---
