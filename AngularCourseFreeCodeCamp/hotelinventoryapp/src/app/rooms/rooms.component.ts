@@ -7,6 +7,7 @@ import { Room, RoomList } from './rooms';
   styleUrls: ['./rooms.component.scss'],
 })
 export class RoomsComponent implements OnInit {
+  title: string = 'Room List';
   hotelName = 'Hilton Hotel';
   numberOfRooms = 20;
   hideRooms: boolean = false;
@@ -75,6 +76,7 @@ export class RoomsComponent implements OnInit {
 
   toggle() {
     this.hideRooms = !this.hideRooms;
+    this.title = 'Rooms List';
   }
 
   selectRoom(room: RoomList) {
