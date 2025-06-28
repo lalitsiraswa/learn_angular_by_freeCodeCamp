@@ -1,12 +1,36 @@
-import { Component, DoCheck, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  DoCheck,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { Room, RoomList } from './rooms';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'hinv-rooms',
   templateUrl: './rooms.component.html',
   styleUrls: ['./rooms.component.scss'],
 })
-export class RoomsComponent implements OnInit, DoCheck {
+export class RoomsComponent implements OnInit, DoCheck, AfterViewInit {
+  // It’s typically used when you want to access methods, properties, or DOM elements of a child component from the parent component's TypeScript class.
+  // When is it assigned?
+  // Angular will automatically populate headerComponent after ngAfterViewInit() lifecycle hook.
+  // If you try to use a @ViewChild reference before the view is initialized (e.g., in the constructor or ngOnInit()), the reference will be undefined.
+  @ViewChild(HeaderComponent, { static: true })
+  // The { static: true } or { static: false } option tells Angular when to resolve the @ViewChild reference during the component’s lifecycle.
+  // Setting static: true means:
+  // Resolve the view query before Angular runs ngOnInit() — during the component's initialization phase.
+  // This makes the @ViewChild available early, inside ngOnInit().
+  // { static: true }: It indicates that this component(@ViewChild) is actually safe to use inside ngOnInit() lifecycle hook.
+  // Use when the element/component is always present in the template (i.e., not inside *ngIf, *ngFor, etc.).
+
+  // Setting static: false means:
+  // Resolve the view query after Angular has fully initialized the view — after ngAfterViewInit().
+  // The @ViewChild reference will not be available in ngOnInit(), only in ngAfterViewInit().
+  // Use when the element/component is conditionally rendered, e.g., inside *ngIf, *ngFor, etc.
+  headerComponent!: HeaderComponent;
   title: string = 'Room List';
   hotelName = 'Hilton Hotel';
   numberOfRooms = 20;
@@ -24,11 +48,16 @@ export class RoomsComponent implements OnInit, DoCheck {
   roomList: RoomList[] = [];
 
   constructor() {}
+  ngAfterViewInit(): void {
+    console.log('headerComponent: ', this.headerComponent);
+    this.headerComponent.title = 'Welcome To Hilton Hotel';
+  }
   ngDoCheck(): void {
     console.log('On ngDoCheck is Called!');
   }
 
   ngOnInit(): void {
+    console.log('headerComponent: ', this.headerComponent);
     this.roomList = [
       {
         roomNumber: 203,

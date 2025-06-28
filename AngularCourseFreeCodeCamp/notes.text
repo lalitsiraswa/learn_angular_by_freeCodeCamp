@@ -73,32 +73,58 @@
 >> npm i bootstrap
 
 # --- LifeCycle Hooks ---
->> ngOnChanges: ngOnChanges lifecycle hook can be apply to any component which has @Input property, you cannot apply 
+* LifeCycle Hook
+// this lifecycle will execute for each and every component.
+1. ngOnChanges
+2. ngOnInit
+3. ngDoCheck
+4. ngAfterContentInit
+5. ngAfterContentChecked
+6. ngAfterViewInit
+7. ngAfterViewChecked
+8. ngOnDestroy
+
+>> 1. ngOnChanges: ngOnChanges lifecycle hook can be apply to any component which has @Input property, you cannot apply 
     ngOnChanges anywhere else. 
     * It will detect any changes to your @Input values for particular component.
     * You should not implemented 'ngDoCheck' and 'ngOnChanges' together in same component, because both are going to do the same thing.
     * ngOnChanges will detect any changes to your @Input values for particular component.
     * ngDoCheck will detect any changes inside your application.
 
->> ngOnInit: first constructor then ngOnInit. It should be used in case when we want to show some data from an API call.
+>> 2. ngOnInit: first constructor then ngOnInit. It should be used in case when we want to show some data from an API call.
 
->> ngDoCheck: It will be executed everytime when you raise any event/changes, irrespective of where this component is implemented/available.
+>> 3. ngDoCheck: It will be executed everytime when you raise any event/changes, irrespective of where this component is implemented/available.
     * In case it is active it will listen to any changes/event which has happened inside your entire application.
     * It will detect any changes inside your application.
     * It is costly.
     * You should not implemented 'ngDoCheck' and 'ngOnChanges' together in same component, because both are going to do the same thing.
     * ngOnChanges will detect any changes to your @Input values for particular component.
     * ngDoCheck will detect any changes inside your application.
+
+>> 4. ngAfterContentInit
+
+>> 5. ngAfterContentChecked
+
+>> 6. ngAfterViewInit: You need ngAfterViewInit() when you want to interact with child components or DOM elements that Angular has rendered using @ViewChild() or @ViewChildren().
+    * Angular will automatically populate reference property of type @ViewChild after ngAfterViewInit() lifecycle hook.
+    * @ViewChild typically used when you want to access methods, properties, or DOM elements of a child component from the parent component's TypeScript class.
+    * If you try to use a @ViewChild reference before the view is initialized (e.g., in the constructor or ngOnInit()), the reference will be undefined.
+    // @ViewChild(HeaderComponent, { static: true })
+    // The { static: true } or { static: false } option tells Angular when to resolve the @ViewChild reference during the component’s lifecycle.
+    // Setting static: true means:
+    // Resolve the view query before Angular runs ngOnInit() — during the component's initialization phase.
+    // This makes the @ViewChild available early, inside ngOnInit().
+    // { static: true }: It indicates that this component(@ViewChild) is actually safe to use inside ngOnInit() lifecycle hook.
+    // Use when the element/component is always present in the template (i.e., not inside *ngIf, *ngFor, etc.).
+
+    // Setting static: false means:
+    // Resolve the view query after Angular has fully initialized the view — after ngAfterViewInit().
+    // The @ViewChild reference will not be available in ngOnInit(), only in ngAfterViewInit().
+    // Use when the element/component is conditionally rendered, e.g., inside *ngIf, *ngFor, etc.
     
->> ngAfterContentInit
+>> 7. ngAfterViewChecked
 
->> ngAfterContentChecked
-
->> ngAfterViewInit
-
->> ngAfterViewChecked
-
->> ngOnDestroy
+>> 8. ngOnDestroy
 
 # --- Component Communication/Interaction ---
 1. Using @Input & @Output
