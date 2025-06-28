@@ -51,13 +51,10 @@ export class RoomsComponent
   roomList: RoomList[] = [];
 
   constructor() {}
-  ngAfterViewChecked(): void {
-    console.log('headerComponent: ', this.headerComponent);
-    this.headerComponent.title = 'Welcome To Hilton Hotel';
-  }
+  ngAfterViewChecked(): void {}
   ngAfterViewInit(): void {
     console.log('headerComponent: ', this.headerComponent);
-    // this.headerComponent.title = 'Welcome To Hilton Hotel';
+    this.headerComponent.title = 'Welcome To Hilton Hotel';
   }
   ngDoCheck(): void {
     console.log('On ngDoCheck is Called!');

@@ -116,6 +116,7 @@
     // This makes the @ViewChild available early, inside ngOnInit().
     // { static: true }: It indicates that this component(@ViewChild) is actually safe to use inside ngOnInit() lifecycle hook.
     // Use when the element/component is always present in the template (i.e., not inside *ngIf, *ngFor, etc.).
+    // Setting static: true only when you ensure that your @ViewChild component does't contain any asynchronous code inside ngOnInit().
 
     // Setting static: false means:
     // Resolve the view query after Angular has fully initialized the view — after ngAfterViewInit().
@@ -145,3 +146,10 @@
     2. In case you are assigning or passing some data, it should be come from parent component, and the it should be immutable.
 
 >> Default: ChangeDetectionStrategy.Default;
+
+# --- <ng-template #user></ng-template> ---
+>> <ng-template> is an Angular structural directive container. It defines a chunk of HTML that is not rendered immediately, 
+    but can be rendered later conditionally or dynamically.
+>> <ng-template> is a kind of tag, which will never render anything, means <ng-template> itself won't run anything, but it 
+    can help us to render some other template(it can be other component).
+>> <ng-template> is never rendered as a DOM element. It doesn’t appear in the DOM tree.
