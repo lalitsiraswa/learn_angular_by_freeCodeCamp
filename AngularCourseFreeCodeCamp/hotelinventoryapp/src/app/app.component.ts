@@ -50,5 +50,7 @@ export class AppComponent implements AfterViewInit {
   // Use when the element/component is conditionally rendered, e.g., inside *ngIf, *ngFor, etc.
   ngAfterViewInit(): void {
     const componentRef = this.vcr.createComponent(RoomsComponent);
+    // Accessing and manipulating property of 'RoomsComponent' component using 'componentRef'.
+    componentRef.instance.numberOfRooms = 50;
   }
 }
