@@ -29,6 +29,7 @@ export class RoomsComponent
   // This makes the @ViewChild available early, inside ngOnInit().
   // { static: true }: It indicates that this component(@ViewChild) is actually safe to use inside ngOnInit() lifecycle hook.
   // Use when the element/component is always present in the template (i.e., not inside *ngIf, *ngFor, etc.).
+  // Setting static: true only when you ensure that your @ViewChild component does't contain any asynchronous code inside ngOnInit().
 
   // Setting static: false means:
   // Resolve the view query after Angular has fully initialized the view — after ngAfterViewInit().

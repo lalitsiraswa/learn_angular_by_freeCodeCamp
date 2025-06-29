@@ -1,6 +1,7 @@
 import {
   AfterViewInit,
   Component,
+  ElementRef,
   OnInit,
   ViewChild,
   ViewContainerRef,
@@ -14,7 +15,13 @@ import { RoomsComponent } from './rooms/rooms.component';
   styleUrls: ['./app.component.scss'],
   // styles: [`h1{color: red}`]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  @ViewChild('name', { static: true }) name!: ElementRef;
+
+  ngOnInit(): void {
+    this.name.nativeElement.innerHTML = '<h1>Hello Jee!</h1>';
+    console.log('name: ', this.name);
+  }
   // ! (Definite Assignment Assertion)
   // This is the "definite assignment assertion operator" in TypeScript. It tells the compiler:
   // "Trust me, I will assign a value to this property before it’s used, even if it doesn't look like it right now."
