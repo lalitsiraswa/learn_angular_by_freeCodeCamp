@@ -14,12 +14,12 @@ import { RoomsComponent } from './rooms/rooms.component';
   styleUrls: ['./app.component.scss'],
   // styles: [`h1{color: red}`]
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent {
   // ! (Definite Assignment Assertion)
   // This is the "definite assignment assertion operator" in TypeScript. It tells the compiler:
   // "Trust me, I will assign a value to this property before it’s used, even if it doesn't look like it right now."
   // Normally, TypeScript would complain if you don’t initialize a non-optional field:
-  @ViewChild('user', { read: ViewContainerRef }) vcr!: ViewContainerRef;
+  // @ViewChild('user', { read: ViewContainerRef }) vcr!: ViewContainerRef;
   // ViewContainerRef is a class in Angular that represents a container within the view, where you can dynamically add,
   // remove, or manipulate components or templates at runtime.
   // It is Angular’s way of giving you programmatic control over part of the DOM.
@@ -48,9 +48,9 @@ export class AppComponent implements AfterViewInit {
   // Resolve the view query after Angular has fully initialized the view — after ngAfterViewInit().
   // The @ViewChild reference will not be available in ngOnInit(), only in ngAfterViewInit().
   // Use when the element/component is conditionally rendered, e.g., inside *ngIf, *ngFor, etc.
-  ngAfterViewInit(): void {
-    const componentRef = this.vcr.createComponent(RoomsComponent);
-    // Accessing and manipulating property of 'RoomsComponent' component using 'componentRef'.
-    componentRef.instance.numberOfRooms = 50;
-  }
+  // ngAfterViewInit(): void {
+  //   const componentRef = this.vcr.createComponent(RoomsComponent);
+  //   // Accessing and manipulating property of 'RoomsComponent' component using 'componentRef'.
+  //   componentRef.instance.numberOfRooms = 50;
+  // }
 }
