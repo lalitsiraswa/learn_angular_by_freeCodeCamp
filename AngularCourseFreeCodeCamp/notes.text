@@ -153,3 +153,12 @@
 >> <ng-template> is a kind of tag, which will never render anything, means <ng-template> itself won't run anything, but it 
     can help us to render some other template(it can be other component).
 >> <ng-template> is never rendered as a DOM element. It doesn’t appear in the DOM tree.
+
+# --- What we had done using @ViewChild ---
+1. We access an Component instance using @ViewChild 
+    >> @ViewChild(HeaderComponent, { static: true }) headerComponent!: HeaderComponent;
+    >> @ViewChild(HeaderComponent) headerComponent!: HeaderComponent;
+2.  We used 'ViewContainerRef' to dynamically load a component. 
+    >> @ViewChild('user', { read: ViewContainerRef }) vcr!: ViewContainerRef;
+3. We access an HTML element using template reference variable.
+    >> @ViewChild('name', { static: true }) name!: ElementRef;
